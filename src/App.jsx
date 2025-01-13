@@ -5,13 +5,15 @@ function App() {
         event.preventDefault();
         const formData = new FormData(event.target);
 
-        // Pobierz tytuł filmu
-        const title = formData.get("title");
-        console.log(`Tytuł filmu: ${title}`);
+        const title = formData.get('title');
+        const genre = formData.get("id");
 
-        // Pobierz wybrany gatunek
-        const genre = formData.get("movie");
-        console.log(`Wybrany gatunek: ${genre}`);
+        const movie = {
+            Tytul: title,
+            id: genre
+        }
+
+        console.log(movie);
     }
 
   return (
@@ -24,13 +26,13 @@ function App() {
                   </div>
                   <div className="mb-3">
                       <label className="form-label">
-                          Gatunek filmu:
+                          Rodzaj:
                       </label>
-                      <select className="form-select" name='movie'>
-                          <option id={"1"}>Komedia</option>
-                          <option id={"2"}>Obyczajowy</option>
-                          <option id={"3"}>Sensacyjny</option>
-                          <option id={"4"}>Horror</option>
+                      <select className="form-select" name='id'>
+                          <option value="1">Komedia</option>
+                          <option value="2">Obyczajowy</option>
+                          <option value="3">Sensacyjny</option>
+                          <option value="4">Horror</option>
                       </select>
                   </div>
                   <div className="mb-3">
